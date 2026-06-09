@@ -2,6 +2,9 @@
 
 @theme {
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-accent-blue: #0ea5e9;
+  --color-navy: #0f172a;
+  --color-navy-light: #1e293b;
   --color-brand-50: #ecfdf5;
   --color-brand-100: #d1fae5;
   --color-brand-200: #a7f3d0;
@@ -27,7 +30,7 @@ html {
 body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
-  background-color: #f8fafc;
+  background-color: #ffffff;
   overflow-x: hidden;
 }
 
@@ -178,11 +181,11 @@ html.js-anim .animated-item:not(.no-animate) {
 
 @keyframes hero-ken-burns {
   from { transform: scale(1); }
-  to { transform: scale(1.06); }
+  to { transform: scale(1.05); }
 }
 
 .hero-ken-burns {
-  animation: hero-ken-burns 6s ease-out forwards;
+  animation: hero-ken-burns 8s ease-out forwards;
 }
 
 @keyframes hero-fade-up {

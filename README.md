@@ -26,7 +26,7 @@ git push -u origin main
 4. Push sonrası Action otomatik çalışır. Site adresi:
 
 ```
-https://KULLANICI_ADINIZ.github.io/atak-ilaclama/
+https://202410614017.github.io/atak-ilaclama/
 ```
 
 > Repo adı `kullaniciadi.github.io` ise site kök adreste yayınlanır: `https://kullaniciadi.github.io/`

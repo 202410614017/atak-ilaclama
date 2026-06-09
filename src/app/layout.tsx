@@ -42,7 +42,7 @@ export default function RootLayout({
     <html lang="tr">
       <body className={`${jakarta.variable} text-slate-900 antialiased`}>
         <Header />
-        <main>{children}</main>
+        <main className="pb-20 sm:pb-6">{children}</main>
         <Footer />
         <FloatingButtons />
         <AnimatedEntrance />

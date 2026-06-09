@@ -107,10 +107,46 @@ export function serviceHref(base: "temizlik" | "hasere-ilaclama", slug: string) 
 }
 
 export const BLOG_POSTS = [
-  { title: "Kokusuz İlaçlama Sonrası Evde Temizlik Yapılmalı mı? (Doğru Bilinen Yanlışlar)", slug: "kokusuz-ilaclama-sonrasi", date: "15 Mayıs 2026", excerpt: "Evde hamam böceği, karınca veya pire gibi haşerelerle karşılaşıldığında birçok kişi ilaçlama sonrası hemen temizliğe girişmek ister.", image: "/2026/05/kokusuz-ilaclama-sonrasi-temizlik-yapilir-mi-768x512.webp" },
-  { title: "Balıkesir'de Yaz Aylarında En Sık Karşılaşılan 5 Haşere ve Evde Alınabilecek Önlemler", slug: "balikesirde-yaz-aylarinda-en-sik-karsilasilan-5-hasere", date: "13 Mayıs 2026", excerpt: "Sıcaklıkların artması ve yaz aylarının gelmesiyle birlikte, doğadaki hareketlilik evlerimize taşınır.", image: "/2026/05/yaz-aylarinda-en-sik-karsilasilacak-hasereler-768x512.webp" },
-  { title: "Evde Hamam Böceği Gördüğünüzde Asla Yapmamanız Gereken 3 Hata", slug: "hamam-bocegi-ilaclamasinda-yapilan-yanlislar", date: "12 Mayıs 2026", excerpt: "Gece su içmek için mutfağa girdiğinizde ışığı açtığınız an tezgâhın altından bir hamam böceği görmek...", image: "/2026/05/evde-hamam-bocegine-karsi-yanlis-yapilanlar-768x512.webp" },
-  { title: "Islak Bezle Koltuk Silmek Neden Temizlik Değil, Tehlikedir?", slug: "islak-bezle-koltuk-silmek", date: "11 Mayıs 2026", excerpt: "Bahar temizliği, bayram hazırlığı veya dökülen bir çayı temizlemek… Çoğumuzun ilk refleksi ıslak bezle silmektir.", image: "/2026/05/islak-bezle-koltuk-silme-768x432.webp" },
+  {
+    title: "Kokusuz İlaçlama Sonrası Evde Temizlik Yapılmalı mı? (Doğru Bilinen Yanlışlar)",
+    slug: "kokusuz-ilaclama-sonrasi",
+    date: "15 Mayıs 2026",
+    excerpt:
+      "Evde hamam böceği, karınca veya pire gibi haşerelerle karşılaşıldığında birçok kişi ilaçlama sonrası hemen temizliğe girişmek ister.",
+    image: "/2026/05/kokusuz-ilaclama-sonrasi-temizlik-yapilir-mi-768x512.webp",
+    category: "Pratik Bilgiler",
+    views: 24,
+  },
+  {
+    title: "Balıkesir'de Yaz Aylarında En Sık Karşılaşılan 5 Haşere ve Evde Alınabilecek Önlemler",
+    slug: "balikesirde-yaz-aylarinda-en-sik-karsilasilan-5-hasere",
+    date: "13 Mayıs 2026",
+    excerpt:
+      "Sıcaklıkların artması ve yaz aylarının gelmesiyle birlikte, doğadaki hareketlilik evlerimize taşınır.",
+    image: "/2026/05/yaz-aylarinda-en-sik-karsilasilacak-hasereler-768x512.webp",
+    category: "Haşere Kontrolü",
+    views: 31,
+  },
+  {
+    title: "Evde Hamam Böceği Gördüğünüzde Asla Yapmamanız Gereken 3 Hata",
+    slug: "hamam-bocegi-ilaclamasinda-yapilan-yanlislar",
+    date: "12 Mayıs 2026",
+    excerpt:
+      "Gece su içmek için mutfağa girdiğinizde ışığı açtığınız an tezgâhın altından bir hamam böceği görmek...",
+    image: "/2026/05/evde-hamam-bocegine-karsi-yanlis-yapilanlar-768x512.webp",
+    category: "Haşere Kontrolü",
+    views: 18,
+  },
+  {
+    title: "Islak Bezle Koltuk Silmek Neden Temizlik Değil, Tehlikedir?",
+    slug: "islak-bezle-koltuk-silmek",
+    date: "11 Mayıs 2026",
+    excerpt:
+      "Bahar temizliği, bayram hazırlığı veya dökülen bir çayı temizlemek… Çoğumuzun ilk refleksi ıslak bezle silmektir.",
+    image: "/2026/05/islak-bezle-koltuk-silme-768x432.webp",
+    category: "Pratik Bilgiler",
+    views: 27,
+  },
 ] as const;
 
 export function img(path: string) {

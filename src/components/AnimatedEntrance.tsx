@@ -11,12 +11,22 @@ export default function AnimatedEntrance() {
   const pathname = usePathname();
 
   useLayoutEffect(() => {
+    let cancelled = false;
+
+    const run = () => {
+      if (!cancelled) runAnimatedEntrance();
+    };
+
     const frame = requestAnimationFrame(() => {
-      runAnimatedEntrance();
+      requestAnimationFrame(run);
     });
 
+    window.addEventListener("load", run);
+
     return () => {
+      cancelled = true;
       cancelAnimationFrame(frame);
+      window.removeEventListener("load", run);
       cleanupAnimatedEntrance();
     };
   }, [pathname]);

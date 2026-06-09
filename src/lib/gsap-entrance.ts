@@ -5,7 +5,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const DURATION = 1.2;
 const EASE = "power4.out";
-const FALLBACK_MS = 1800;
+const FALLBACK_MS = 2500;
 
 function prefersReducedMotion(): boolean {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -45,11 +45,11 @@ function setInitialState(elements: HTMLElement[]) {
 
   elements.forEach((el) => {
     if (mobile) {
-      gsap.set(el, { opacity: 0, x: 0, y: 16, willChange: "transform, opacity" });
+      gsap.set(el, { opacity: 0, x: 0, y: 24, willChange: "transform, opacity" });
     } else {
       gsap.set(el, {
-        x: gsap.utils.random(-80, 80),
-        y: gsap.utils.random(-50, 50),
+        x: gsap.utils.random(-100, 100),
+        y: gsap.utils.random(-60, 60),
         opacity: 0,
         willChange: "transform, opacity",
       });
@@ -70,7 +70,7 @@ function revealElements(elements: HTMLElement[], stagger = 0.06) {
 }
 
 function mobileDuration() {
-  return isMobileViewport() ? 0.8 : DURATION;
+  return isMobileViewport() ? 0.85 : DURATION;
 }
 
 let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
@@ -97,7 +97,7 @@ export function runAnimatedEntrance() {
 
   items.forEach((el) => {
     const rect = el.getBoundingClientRect();
-    if (rect.top < viewportHeight * 0.95) {
+    if (rect.top < viewportHeight * 0.92) {
       immediate.push(el);
     } else {
       onScroll.push(el);
@@ -106,10 +106,11 @@ export function runAnimatedEntrance() {
 
   if (immediate.length) {
     setInitialState(immediate);
+    const stagger = isMobileViewport() ? 0.05 : 0.08;
     gsap
       .timeline()
-      .add(revealElements(immediate, isMobileViewport() ? 0.04 : 0.06))
-      .call(finishAnimations, undefined, ">+=0.1");
+      .add(revealElements(immediate, stagger))
+      .call(finishAnimations, undefined, ">+=0.15");
   } else {
     finishAnimations();
   }
@@ -117,7 +118,7 @@ export function runAnimatedEntrance() {
   if (onScroll.length) {
     setInitialState(onScroll);
     ScrollTrigger.batch(onScroll, {
-      start: "top 92%",
+      start: "top 90%",
       once: true,
       onEnter: (batch) => {
         gsap.to(batch, {
@@ -126,7 +127,7 @@ export function runAnimatedEntrance() {
           opacity: 1,
           duration: mobileDuration(),
           ease: EASE,
-          stagger: isMobileViewport() ? 0.03 : 0.05,
+          stagger: isMobileViewport() ? 0.04 : 0.06,
           overwrite: "auto",
           onComplete: () => clearWillChange(batch as HTMLElement[]),
         });

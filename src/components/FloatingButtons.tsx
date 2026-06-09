@@ -7,8 +7,8 @@ export default function FloatingButtons() {
   return (
     <div
       data-fixed-ui
-      className="no-animate fixed bottom-4 right-4 z-50 flex flex-col gap-2.5 sm:bottom-6 sm:left-4 sm:right-auto sm:gap-3"
-      style={{ paddingBottom: "env(safe-area-inset-bottom, 0px)" }}
+      className="no-animate fixed bottom-4 right-4 z-50 flex flex-col gap-3 sm:bottom-6 sm:left-4 sm:right-auto"
+      style={{ paddingBottom: "max(0.5rem, env(safe-area-inset-bottom, 0px))" }}
     >
       <a
         href={`https://wa.me/${SITE.whatsapp}`}
@@ -23,7 +23,7 @@ export default function FloatingButtons() {
       </a>
       <a
         href={`tel:${SITE.phone.replace(/\s/g, "")}`}
-        className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-600 text-white shadow-lg transition active:scale-95 sm:h-14 sm:w-14 sm:hover:bg-brand-700 sm:hover:shadow-xl"
+        className="flex h-12 w-12 items-center justify-center rounded-full bg-navy text-white shadow-lg transition active:scale-95 sm:h-14 sm:w-14 sm:hover:bg-navy-light sm:hover:shadow-xl"
         aria-label="Telefon"
       >
         <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
